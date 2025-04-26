@@ -28,5 +28,16 @@ public class GlobalExceptionHandler {
         }
         return Result.fail(sb.toString());
     }
+
+    /**
+     * 捕获业务异常
+     * @param ex
+     * @return
+     */
+    @ExceptionHandler
+    public Result exceptionHandler(BaseException ex){
+        log.error("异常信息：{}", ex.getMessage());
+        return Result.fail(ex.getMessage());
+    }
 }
 
