@@ -1,5 +1,6 @@
 package com.hmdp.service;
 
+import com.hmdp.dto.Result;
 import com.hmdp.entity.Blog;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,24 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IBlogService extends IService<Blog> {
 
+    /**
+     * 查看探店笔记
+     * @param id
+     * @return
+     */
+    Result queryBlogById(Long id);
+
+    /**
+     * 点赞功能
+     * @param id
+     * @return
+     */
+    Result likeBlog(Long id);
+
+    /**
+     * 查询点赞列表
+     * @param id
+     * @return
+     */
+    Result queryBlogLikes(Long id);
 }
